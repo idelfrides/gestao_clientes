@@ -26,7 +26,16 @@
         </div>
     </div>
 
+
+    <form method="POST"> <!-- {% csrf_token %}  --> 
+        {% csrf_token %}
+        <button type="submit">SUBMIT</button>
+    </form>
+
 {% endblock %}
+
+
+
 
 {% block footer %}
     <footer class="footer">

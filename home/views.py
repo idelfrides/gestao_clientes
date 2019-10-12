@@ -8,6 +8,7 @@ from django.views import View
 
 # TODO: test to do here
 def home(request):
+    """ Home view method """
     # import pdb
     # pdb.set_trace()    # pára a execução nesta linha,
                        # permitindo vc debugar o script 
@@ -15,12 +16,13 @@ def home(request):
 
 
 def my_logout(request):
+    """ logout view method    """
     logout(request)
     return redirect('home')
 
 
 class HomePageView(TemplateView):
-    """ template views """
+    """ Template views """
     template_name='home3.html'
 
     def get_context_data(self, **kwargs):
@@ -30,9 +32,16 @@ class HomePageView(TemplateView):
 
 
 class Myview(View):
+    """ Template view ovaride get method """
     
     def get(self, request, *args, **kwargs):
-        return HttpResponse('Hello World')
+        # return HttpResponse('Hello World')
+        return render(request, 'home3.html')
+
+    
+    def post(self, request, *args, **kwargs):
+        return HttpResponse('Hello World --> POST')
+        # return render(request, 'home2.html')
 
 
 
