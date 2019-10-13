@@ -1,12 +1,12 @@
 
 <h1>Person List</h1>
-<p>list person created on this system</p>
+<p> List person created on this system</p>
 <hr>
 
 <ul>
     {% for person in object_list %}
 
-        <li>{{ person }}</li>
+        <li> <a href="{% url 'url_person_detail' person.id %}">{{ person }}</a></li>
 
     {% endfor %}
 </ul>
